@@ -1,6 +1,6 @@
 # AlleleSpecificGuideFinder
 
-This program is designed to return allele-specific guides to be used for CRISPR/Cas9 heterozygous gene knockouts. There are slight differences in the nucleotide sequences between two different species' genes. AlleleSpecificGuideFinder capitalizes on these differences to generate CRISPR/Cas9 sgRNAs that target one species' allele.
+This program is designed to return allele-specific guides to be used for CRISPR/Cas9 heterozygous gene knockouts. There are slight differences in the nucleotide sequences between two different species' genes. AlleleSpecificGuideFinder capitalizes on these differences to generate CRISPR/Cas9 sgRNAs that target one species's allele.
 ## Requirements
 
 AlleleSpecificGuideFinder utililizes [CRISPOR](https://github.com/maximilianh/crisporWebsite), which is described in [this paper](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-1012-2).
