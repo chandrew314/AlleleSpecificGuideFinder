@@ -1,13 +1,12 @@
 # AlleleSpecificGuideFinder
 
-This program is designed to return allele-specific guides to be used for CRISPR/Cas9 heterozygous gene knockouts. There are differences in the nucleotide sequences between two different species' genes. AlleleSpecificGuideFinder capitalizes on these differences to generate CRISPR/Cas9 sgRNAs that target one species's allele.
+This program is designed to return allele-specific guides to be used for CRISPR/Cas9 heterozygous gene knockouts. There are differences in the nucleotide sequences between two different species' genes. AlleleSpecificGuideFinder capitalizes on these differences to generate CRISPR/Cas9 sgRNAs that target one species's allele. Additionally, AlleleSpecificGuideFinder will output the target cut percentage of each guide as well as the indexes of the specific nucleotides that differ between one species and the other. Guides can be categorized as in-PAM or near-PAM based on these differences: in-PAM guides are based on differences within the PAM site (indexes 22 and 21), and near-PAM guides are based on differences near the PAM site (indexes 16-19).
+
 ## Requirements
 
 AlleleSpecificGuideFinder utililizes [CRISPOR](https://github.com/maximilianh/crisporWebsite), which is described in [this paper](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-1012-2).
 
 You will need to be able to run CRISPOR in order to run this program as AlleleSpecificGuideFinder uses CRISPOR-generated guides to determine whether the guides are allele specific or not.
-
-Additionally, AlleleSpecificGuideFinder will output the target cut percentage of each guide as well as the indexes of the specific nucleotides that differ between one species and the other. Guides can be categorized as in-PAM or near-PAM based on these differences: in-PAM guides are based on differences within the PAM site (indexes 22 and 21), and near-PAM guides are based on differences near the PAM site (indexes 16-19).
 
 AlleleSpecificGuideFinder utilizes these packages (in addition to the one CRISPOR uses):
 1. Biopython
