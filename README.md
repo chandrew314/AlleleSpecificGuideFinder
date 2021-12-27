@@ -2,7 +2,7 @@
 
 This program is designed to return allele-specific guides to be used for CRISPR/Cas9 heterozygous gene knockouts. There are slight differences in the nucleotide sequences between two different species' genes. AlleleSpecificGuideFinder capitalizes on these differences to generate CRISPR/Cas9 sgRNAs that target one species' allele.
 ## Requirements
----
+
 AlleleSpecificGuideFinder utililizes [CRISPOR](https://github.com/maximilianh/crisporWebsite), which is described in [this paper](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-1012-2).
 
 You will need to be able to run CRISPOR in order to run this program as AlleleSpecificGuideFinder uses CRISPOR-generated guides to determine whether the guides are allele specific or not.
@@ -15,7 +15,7 @@ AlleleSpecificGuideFinder utilizes these packages (in addition to the one CRISPO
 3. Functools
 
 ## How to use
----
+
 The script `findingsgRNAs.py` must be run in the 'crisporWebsite' directory.
 ```
 Usage: python3.6 findingsgRNAs.py [options] species1FastaInFile species1Genome species1GuideOutFile species2FastaInFile species2Genome species2GuideOutFile guideOutputFile
@@ -50,5 +50,5 @@ optional arguments:
 [-m | -control] are mutually exclusive since guides that can target both species are not in-PAM/near-PAM.
 ```
 ## Quirks
----
+
 When one of the two exon sequences are much longer/shorter than the other (ie. one species has more exons than the other), the Bio.Align package used will usually align the sequences with a length of dashes. Any guides that are in this region will have an 'analogous' guide that is made entirely of dashes. Therefore, the entire guide is unique; the -m option will take these guides off.
