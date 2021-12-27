@@ -51,4 +51,4 @@ optional arguments:
 ```
 ## Quirks
 
-When one of the two exon sequences are much longer/shorter than the other (ie. one species has more exons than the other), the Bio.Align package used will usually align the sequences with a length of dashes. Any guides that are in this region will have an 'analogous' guide that is made entirely of dashes. Therefore, the entire guide is unique; the -m option will take these guides off.
+When one of the two exon sequences are much longer/shorter than the other (ie. one species has more exons than the other), the Bio.Align package used will usually align the sequences with a length of dashes. Any guides that are in this region will have an 'analogous' guide that is made entirely of dashes. Therefore, the entire guide is unique; the -m option will take these guides off. If the program outputs many guides where the 'mutation locations' column has lists with many indexes or a sentence saying, 'No analogous guide found,' it's a sign that perhaps the exon sequences between the two species are too diverged or that you should use a different exon sequence for one species's gene.
