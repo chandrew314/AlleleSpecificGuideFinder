@@ -23,31 +23,23 @@ Usage: python3.6 findingsgRNAs.py [options] species1FastaInFile species1Genome s
 positional arguments:
 
 species1FastaInFile  = location of the FASTA file for one species
-
 species1Genome       = genome identifier for this species
-
 species1GuideOutFile = tab-separated file that will hold all CRISPOR-generated guides for this species
-
 species2FastaInFile  = location of the FASTA file for another species
-
 species2Genome       = genome identifier for this species
-
 species2GuideOutFile = tab-separated file that will hold all CRISPOR-generated guides for this species
-
 guideOutputFile      = tab-separated file that will contain the output of this program
 
-species1/2Genome uses the same genome identifiers as CRISPOR.
+Note: species1/2Genome uses the same genome identifiers as CRISPOR.
 
 optional arguments:
+
 -h, --help      show this help message and exit
-
 -PAM [PAM]      PAM motif to be used in CRISPOR; default is NGG
-
 -m              this will only output in-PAM and near-PAM guides
-
 -control        this will only output guides that can target both species
 
-[-m | -control] are mutually exclusive since guides that can target both species are not in-PAM/near-PAM.
+Note: [-m | -control] are mutually exclusive since guides that can target both species are not in-PAM/near-PAM.
 ```
 ## Quirks
 

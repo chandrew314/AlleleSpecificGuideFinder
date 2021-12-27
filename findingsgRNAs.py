@@ -198,7 +198,7 @@ def get_alignment_between_two_species(mouse1, mouse2):
         print('The sequence identity is ' + str(sequenceidentity))
 
     print(listofalignedsequences)
-    print('huh')
+    #print('huh')
     return listofalignedsequences
 
 @functools.lru_cache(maxsize=None)
@@ -210,7 +210,7 @@ def find_index_for_each_guide(mouse1, mouse2):
     mousecrisportable_df = combine_mouse_crispor_tables(mouse1, mouse2)
     targetseqaslist = mousecrisportable_df['targetSeq'].tolist()
     print(targetseqaslist)
-    print('why')
+    #print('why')
 
 
     listofguidestartindexes = []
@@ -231,7 +231,7 @@ def find_index_for_each_guide(mouse1, mouse2):
     #print(dictofguidestartindexes)
 
     print(listofguidestartindexes)
-    print('omg')
+    #print('omg')
 
     lengthofguides = 23
     mouse1guides = []
@@ -262,7 +262,7 @@ def find_differences_between_guides(mouse1, mouse2):
     print(len(mouse1guides))
     print(mouse2guides)
     print(len(mouse2guides))
-    print('hi')
+    #print('hi')
     listsofinformationaboutmutations = []
     inpamornotinpam = []
     extraindexes = '-----------------------'
@@ -272,7 +272,7 @@ def find_differences_between_guides(mouse1, mouse2):
         specificmouse2guide = mouse2guides[guide]
         print(len(specificmouse2guide))
         print(len(specificmouse1guide))
-        print('boo')
+        #print('boo')
         if len(specificmouse1guide) <= len(specificmouse2guide):
             neededindexes = extraindexes[:(lengthofguide - len(specificmouse1guide))]
             specificmouse1guide = specificmouse1guide + neededindexes
@@ -329,7 +329,7 @@ def length_of_exons(mouse1):
         dictofcumulativeexonlengths[exonnumber] = cumulativeexonlengths
 
     print(dictofcumulativeexonlengths)
-    print('help')
+    #print('help')
     return dictofcumulativeexonlengths
 
 
@@ -341,7 +341,7 @@ def target_cut_percentage(mouse1, mouse2):
 
     dictofcumulativeexonlengths = length_of_exons(mouse1)
     print(dictofcumulativeexonlengths)
-    print('bruh')
+    #print('bruh')
     lastkeyofdictofcumulativeexonlengths = list(dictofcumulativeexonlengths.keys())[-1]
     distancefromindexwhereendonucleasecuts = 18
     totallengthofexon = dictofcumulativeexonlengths[lastkeyofdictofcumulativeexonlengths]
@@ -386,7 +386,7 @@ def check_with_crispor_table(mouse1, mouse2, mouse1anti, mouse2anti):
         combined_df = pd.concat([targetseqformouse1sense_df, targetseqformouse2sense_df, targetseqofmouse1antisense_df,
                              targetseqofmouse2antisense_df], axis=0)
     print(combined_df)
-    print('helpp')
+    #print('helpp')
 
     mouse1merged_df = pd.merge(crispor_df, combined_df, left_on='targetSeq', right_on='targetSeq_' + str(mouse1.species),
                          how='inner')
@@ -395,7 +395,7 @@ def check_with_crispor_table(mouse1, mouse2, mouse1anti, mouse2anti):
     merged_df = pd.concat([mouse1merged_df, mouse2merged_df], axis = 0)
 
     print(merged_df)
-    print('popcorn')
+    #print('popcorn')
     return merged_df
 
 
@@ -424,7 +424,8 @@ def refined_crispor_table(mouse1, mouse2, mouse1anti, mouse2anti):
                                          'offtargetCount', 'mutation locations', 'in-Pam?', 'orientation']]
         print(superfinal_df)
         superfinal_df.to_csv(args.guideOutputFile, sep='\t')
-        return superfinal_df
+        print('done')
+	return superfinal_df
     elif args.m == False:
         semifinal_df.to_csv(args.guideOutputFile, sep='\t')
         print(semifinal_df)
